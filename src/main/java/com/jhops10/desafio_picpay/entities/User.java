@@ -23,16 +23,19 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Wallet wallet;
 
+    private UserType userType;
+
     public User() {
     }
 
-    public User(Long id, String fullName, String email, String cpfCpnj, String password, Wallet wallet) {
+    public User(Long id, String fullName, String email, String cpfCpnj, String password, Wallet wallet, UserType userType) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
         this.cpfCpnj = cpfCpnj;
         this.password = password;
         this.wallet = wallet;
+        this.userType = userType;
     }
 
     public Long getId() {
@@ -81,5 +84,13 @@ public class User {
 
     public void setWallet(Wallet wallet) {
         this.wallet = wallet;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 }
