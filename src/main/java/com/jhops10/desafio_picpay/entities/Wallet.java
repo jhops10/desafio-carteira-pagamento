@@ -10,7 +10,7 @@ public class Wallet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     private BigDecimal balance;
 
@@ -21,17 +21,17 @@ public class Wallet {
     public Wallet() {
     }
 
-    public Wallet(String id, BigDecimal balance, User user) {
+    public Wallet(Long id, BigDecimal balance, User user) {
         this.id = id;
         this.balance = balance;
         this.user = user;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
